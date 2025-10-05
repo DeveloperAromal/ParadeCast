@@ -1,0 +1,11 @@
+blinker
+Flask
+flask-cors
+colorama
+ddgs
+distro
+duckduckgo_search
+langchain
+langchain-core
+langchain-openai
+langchain-text-splitters

@@ -5,7 +5,7 @@ def nasa_weather(lat: float, lon: float, start_date: str, end_date: str) -> str:
 
     base_url = "https://power.larc.nasa.gov/api/temporal/daily/point"
     params = {
-        "parameters": "PRECTOT",
+        "parameters": "PRECTOTCORR",
         "community": "AG",
         "latitude": lat,
         "longitude": lon,

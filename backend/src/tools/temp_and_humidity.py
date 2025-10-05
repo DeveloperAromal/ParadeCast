@@ -28,4 +28,3 @@ def temperature_humidity(lat, lon, start_date, end_date):
     humidity = parameters.get("RH2M", {})  
 
     return {"temperature": temperature, "humidity": humidity}
-

@@ -1,0 +1,33 @@
+{
+  "location": {
+    "name": "Sample City",
+    "latitude": 40.7128,
+    "longitude": -74.006
+  },
+  "forecast_days": 2,
+  "weather_data": {
+    "2025-10-04": {
+      "precipitation": {
+        "amount_mm": 0.5,
+        "status": "Light rain",
+        "probability_percent": 30
+      },
+      "wind": {
+        "speed_mps": 2.7,
+        "direction_deg": 270
+      }
+    },
+    "2025-10-05": {
+      "precipitation": {
+        "amount_mm": 0.3,
+        "status": "Light rain",
+        "probability_percent": 30
+      },
+      "wind": {
+        "speed_mps": 3.0,
+        "direction_deg": 270
+      }
+    }
+  },
+  "advice": "Light rain possible on both days with 30% chance. Winds are light to moderate from the west."
+}
