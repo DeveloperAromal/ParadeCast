@@ -58,7 +58,7 @@ class ReasoningCaptureCallback(BaseCallbackHandler):
         return "".join(self.logs)
 
 
-def main_agent(historic_dates, location_name, latitude, longitude, target_date):
+def main_agent(historic_dates, latitude, longitude, target_date):
     log_file = os.path.join("src/db/raw", "agent_full_log.txt")
 
     llm = ChatOpenAI(
@@ -89,7 +89,7 @@ def main_agent(historic_dates, location_name, latitude, longitude, target_date):
         handle_parsing_errors=True,
     )
 
-    result = agent.run(agent_prompt(historic_dates, location_name, latitude, longitude, target_date))
+    result = agent.run(agent_prompt(historic_dates, latitude, longitude, target_date))
 
     if isinstance(result, (dict, list)):
         result_str = json.dumps(result, indent=2)

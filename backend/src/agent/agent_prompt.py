@@ -1,7 +1,7 @@
-def agent_prompt(historic_dates, location_name, latitude, longitude, target_date):
+def agent_prompt(historic_dates, latitude, longitude, target_date):
     return f"""
 You are ParadeCast, an intelligent weather analysis agent.
-Your task is to generate a full weather summary for location name {location_name} latitude and longitude({latitude}, {longitude}) on historic date like {historic_dates} which is a array of dates so one historic date with current date which is {target_date}.
+Your task is to generate a full weather summary latitude and longitude({latitude}, {longitude}) on historic date like {historic_dates} which is a array of dates so one historic date with current date which is {target_date}.
 
 You have access to these tools:
 1. collect_temperature_info(lat, lon, start_date, end_date) → returns temperature & humidity.
