@@ -14,7 +14,7 @@ def Send_email(receiver_email, subject, html_content, app_email, app_password):
         app_password (str): Sender's app password (Gmail/SMTP)
     """
     plain_text = "This email requires HTML support to view properly."
- message = MIMEMultipart("alternative")
+    message = MIMEMultipart("alternative")
     message["From"] = app_email
     message["To"] = receiver_email
     message["Subject"] = subject
@@ -27,6 +27,7 @@ def Send_email(receiver_email, subject, html_content, app_email, app_password):
             server.starttls()
             server.login(app_email, app_password)
             server.send_message(message)
-        print(f"Email sent to {receiver_email} successfully!")
+            print(f"Email sent to {receiver_email} successfully!")
 
     except Exception as e:
+        print(e)
