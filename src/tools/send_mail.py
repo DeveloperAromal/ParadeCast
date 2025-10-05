@@ -2,7 +2,13 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def Send_email(receiver_email, subject, html_content, app_email, app_password):
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+def send_email(receiver_email, subject, html_content):
     """
     Sends an HTML email with optional plain text fallback.
 
@@ -13,6 +19,10 @@ def Send_email(receiver_email, subject, html_content, app_email, app_password):
         app_email (str): Sender's email address
         app_password (str): Sender's app password (Gmail/SMTP)
     """
+    
+    app_email = os.getenv("APP_EMAIL")
+    app_password = os.getenv("APP_PASSWORD")
+    
     plain_text = "This email requires HTML support to view properly."
     message = MIMEMultipart("alternative")
     message["From"] = app_email

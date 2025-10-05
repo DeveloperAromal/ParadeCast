@@ -1,17 +1,17 @@
 import requests
-from src.utils.haversine import haversine  # your haversine function
+from src.utils.haversine import haversine  
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-api_key = os.getenv("NASA_API_KEY")  # not needed for EONET
+api_key = os.getenv("NASA_API_KEY") 
 
 def get_eonet_events_nearby(lat, lon, radius_km=500):
     """
     Fetch recent natural events from EONET within radius_km of given coordinates
     """
     url = "https://eonet.gsfc.nasa.gov/api/v3/events"
-    response = requests.get(url)  # No headers needed for EONET
+    response = requests.get(url)
 
     if response.status_code != 200:
         print(f"Failed to fetch events: {response.status_code}")
@@ -33,6 +33,6 @@ def get_eonet_events_nearby(lat, lon, radius_km=500):
                     event_copy = event.copy()
                     event_copy["distance_km"] = round(distance, 2)
                     nearby_events.append(event_copy)
-                    break  # Only count event once
+                    break 
 
     return nearby_events
